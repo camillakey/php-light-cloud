@@ -1,0 +1,288 @@
+body {
+	margin: 0;
+	font-family:
+		游ゴシック体, 'Yu Gothic', YuGothic,
+		'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro',
+		メイリオ, Meiryo,
+		Osaka,
+		'ＭＳ Ｐゴシック', 'MS PGothic',
+		sans-serif;
+	color: #303030;
+}
+
+header {
+	position: fixed;
+	width: calc(100vw - 2 * 0.5rem);
+	height: 3rem;
+	padding: 1rem 0.5rem 0.5rem;
+	background-color: #dfefff;
+	box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+	position: absolute;
+	top: 1rem;
+	left: 1.5rem;
+	margin: 0;
+	line-height: 3rem;
+	color: #687888;
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+
+main {
+	width: 100vm;
+	height: calc(100vh - 4.5rem);
+	padding: 4.5rem 0 0;
+	background-color: #f4f4f4;
+}
+
+main .manager {
+	width: calc(100vw - (2 * 2rem + 2 * 0.02rem + 0.1rem + 2 * 1.5rem));
+	height: calc(100vh - (4.5rem + 2 * 1.5rem + 2 * 0.02rem + 0.1rem + 2 * 1rem));
+	margin: 1.5rem 2rem;
+	padding: 1rem 1.5rem;
+	background-color: #fcfcfc;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+main .file-field {
+	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+main div.file {
+	position: relative;
+	width: 10rem;
+	max-width: 10rem;
+	height: 3rem;
+	max-height: 3rem;
+	margin: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
+	background-color: #ffffff;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+main div.file:hover {
+	background-color: #f8f8f8;
+}
+main div.file:active {
+	background-color: #f0f0f0;
+}
+main div.file[data-selected=""] {
+	background-color: #f4f4f4;
+}
+main div.file[data-selected=""]:hover {
+	background-color: #f8f8f8;
+}
+main div.file[data-selected=""]:active {
+	background-color: #f0f0f0;
+}
+main div.file[data-focused=""] {
+	border: solid 0.02rem #c8d0d8;
+}
+
+main div.file span:first-child {
+	position: absolute;
+	width: calc(100% - (2 * 0.5rem + 2 * 0.02rem + 2 * 0.5rem));
+	top: 1.2rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+main div.file span:nth-child(2) {
+	position: absolute;
+	right: 0.3rem;
+	bottom: 0.3rem;
+	font-size: 0.7rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}
+
+
+.viewer .background {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.2);	
+}
+
+.viewer object {
+	position: absolute;
+	max-width: 90%;
+	max-height: 90%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background-color: #ffffff;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+}
+.viewer object[type^="text/"],
+.viewer object[type^="video/"],
+.viewer object[type="application/pdf"] {
+	width: 90%;
+	height: 90%;
+}
+
+.dialog .background {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dialog .content {
+	position: absolute;
+	width: 16rem;
+	height: 6rem;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 1rem 2rem;
+	background-color: #ffffff;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+}
+
+.dialog .content input[type="text"] {
+	width: calc(100% - (2 * 0.05rem + 2 * 1rem));
+	height: 2.5rem;
+	margin: 0;
+	padding: 0 1rem;
+	background-color: #ffffff;
+	border: solid 0.05rem #e0e0e0;
+}
+
+.dialog .content .action {
+	position: absolute;
+	right: 1rem;
+	bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dialog .content .action input[type="button"] {
+	width: 5rem;
+	height: 2rem;
+	margin: 0 0.5rem;
+	background-color: #ffffff;
+	border: solid 0.05rem #e0e0e0;
+}
+.dialog .content .action input[type="button"]:hover,
+.dialog .content .action input[type="button"]:focus {
+	background-color: #f8f8f8;
+}
+.dialog .content .action input[type="button"]:active {
+	background-color: #f0f0f0;
+}
+
+
+.context-menu .background {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+.context-menu .menu {
+	position: absolute;
+	width: 16rem;
+	top: 0;
+	left: 0;
+	background-color: #ffffff;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.context-menu .menu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.context-menu .menu li {
+	width: calc(100% - 1rem);
+	height: 3rem;
+	padding-left: 1rem;
+	display: table;
+}
+.context-menu .menu li:hover {
+	background-color: #f8f8f8;
+}
+
+.context-menu .menu li span {
+	vertical-align: middle;
+	display: table-cell;
+}
+
+
+.progress {
+	position: fixed;
+	width: 16rem;
+	right: 2rem;
+	bottom: 1.5rem;
+	background-color: #ffffff;
+	cursor: default;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.progress ul {
+	margin: 0;
+	padding: 0;
+	box-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.05);
+	border: solid 0.02rem #e0e0e0;
+	list-style-type: none;
+}
+.progress ul:empty {
+	display: none;
+}
+
+.progress li {
+	width: calc(100% - 1rem);
+	height: 3rem;
+	padding-left: 1rem;
+	display: table;
+}
+.progress li:hover {
+	background-color: #f8f8f8;
+}
+
+.progress li span {
+	vertical-align: middle;
+	display: table-cell;
+}
+
